@@ -589,6 +589,7 @@ section{position:relative;padding:56px 0;}
 .flower-guestbook{top:-10px;left:-30px;width:110px;transform:rotate(8deg);}
 .flower-reception{top:32%;left:-38px;width:105px;transform:rotate(-10deg);}
 .flower-program{bottom:-22px;left:auto;right:-32px;width:115px;transform:rotate(10deg) scaleX(-1);}
+.flower-katb{top:-20px;right:-30px;width:100px;transform:rotate(15deg) scaleX(-1);opacity:0.8;}
 
 .wishes-list{margin-top:22px;display:flex;flex-direction:column;gap:12px;position:relative;z-index:2;}
 .wish-item{
@@ -864,10 +865,17 @@ html, body{ overflow-x: clip; overscroll-behavior-x: none; }
   <!-- KATB KETAB INFO CARD -->
   <section class="container" style="margin-bottom: 30px;">
     <div class="dark-card reveal">
+      <img class="floral flower-katb" src="" alt="" />
       <h2 class="section-title on-dark">معلومات عقد القران</h2>
       <p class="section-sub on-dark" style="line-height: 1.8; font-size: 16px; margin-bottom: 0;">
         ستقام في مسجد أبو عجيزة بميدان المديرية<br>يوم الجمعة 2 أكتوبر بعد صلاة العشاء
       </p>
+      <div style="text-align: center; margin-top: 15px;">
+        <a href="https://www.google.com/maps/search/?api=1&query=مسجد+أبو+عجيزة+ميدان+المديرية+بني+سويف" target="_blank" rel="noopener" class="add-cal-link" style="margin-bottom: 0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          الموقع على خرائط جوجل
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1406,7 +1414,7 @@ window.ASSETS = {
   document.documentElement.style.setProperty('--img-castle', 'url(' + ASSETS.castle + ')');
 
   /* ---------- populate static images ---------- */
-  document.querySelectorAll('.flower-hero, .flower-reception, .flower-program, .flower-guestbook')
+  document.querySelectorAll('.flower-hero, .flower-reception, .flower-program, .flower-guestbook, .flower-katb')
     .forEach(function(el){ el.src = ASSETS.flower; });
   document.querySelector('.env-bg').src = ASSETS.envelopeBg;
   document.querySelector('.env-cover').src = ASSETS.envelopeCover;
