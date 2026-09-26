@@ -775,6 +775,30 @@ html, body{ overflow-x: clip; overscroll-behavior-x: none; }
   text-align:center; padding:18px 12px; font-size:13px;
   color:rgba(92,20,32,.55);
 }
+
+/* مؤشر التمرير للأسفل (اسحب للأعلى) */
+.scroll-indicator {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--maroon);
+  opacity: 0.8;
+  font-size: 14px;
+  font-weight: 600;
+  animation: bounceDown 2s infinite;
+}
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--maroon);
+}
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(8px); }
+  60% { transform: translateY(4px); }
+}
 </style>
 <style id="wda-env-boot">#coverScreen{display:none!important;}body:not(.wda-env-open){background-color:#3a0011!important;}body::before{content:'';position:fixed;inset:0;z-index:1500;background:#3a0011 url('../royal/envelope-cover.jpg') center center/cover no-repeat;pointer-events:none;}body.wda-env-open::before{display:none!important;}</style></head>
 <body>
@@ -829,6 +853,11 @@ html, body{ overflow-x: clip; overscroll-behavior-x: none; }
       <span data-elem-id="7000000000302"></span>
       <span class="amp-big">&amp;</span>
       <span data-elem-id="7000000000303"></span>
+    </div>
+
+    <div class="scroll-indicator reveal">
+      <span>اسحب للأعلى</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
     </div>
   </section>
 
