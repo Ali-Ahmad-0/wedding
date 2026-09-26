@@ -1966,6 +1966,24 @@ window.ASSETS = {
       }
     }, true);
 
+    // ===== إيقاف الصوت تلقائياً عند الخروج من المتصفح أو التطبيق =====
+    // تجربة مستخدم أفضل: الصوت بيقف لما الضيف يطلع من المتصفح،
+    // وبيرجع يشتغل لوحده لما يرجع (لو كان شغال قبل ما يطلع).
+    var wasPlayingBeforeHidden = false;
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        wasPlayingBeforeHidden = !audio.paused;
+        if (wasPlayingBeforeHidden) {
+          audio.pause();
+          markBtn(false);
+        }
+      } else {
+        if (wasPlayingBeforeHidden) {
+          startMusic();
+        }
+      }
+    });
+
     // ===== الموسيقى تشتغل أول ما الضيف يفتح الدعوة =====
     // قوالب Tilda بتربط الأغنية بزرار الفتح (.popup-enter) فبتشتغل مع
     // الفتح على طول. Royal Maroon زرار فتحه منفصل (#openBtn) وكان مربوط
